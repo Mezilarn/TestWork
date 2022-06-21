@@ -1,0 +1,27 @@
+﻿@using TestWork.Data.Models
+@model IQueryable<TestWork.Data.Models.Products>
+@{
+    ViewData["Title"] = "Home page";
+}
+<meta charset="utf-8">
+<div class="text-center">
+    <table border="1" width="900" style="border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Цена</th>
+            </tr>
+            @foreach (Products entity in Model)
+            {
+                <tr>
+                    <td>@entity.Id</td>
+                    <td>@entity.Name</td>
+                    <td>@entity.Desc</td>
+                    <td>@entity.Price&#x20bd;</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
